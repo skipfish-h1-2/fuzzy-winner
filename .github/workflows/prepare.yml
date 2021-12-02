@@ -1,0 +1,12 @@
+name: prepare
+on: [push]
+jobs:
+  prepare:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: create artifact
+      run: echo "123" > artifact.txt
+    - uses: actions/upload-artifact@v2
+      with:
+        name: sample
+        path: "artifact.txt"
